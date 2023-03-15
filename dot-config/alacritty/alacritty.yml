@@ -1,0 +1,9 @@
+import:
+  - ~/.config/alacritty/dracula.yml
+shell:
+  program: /bin/zsh
+font:
+  normal:
+    family: Noto Sans Mono
+    style: Regular
+  size: 7.0
