@@ -1,0 +1,38 @@
+" remove everything not managed by this file
+set nocompatible
+
+" set indenting default if filetype is known
+if has('filetype')
+	filetype indent plugin on
+endif
+
+" enable syntax highlighting
+if has('syntax')
+	syntax on
+endif
+
+" better command-line completion
+set wildmenu
+
+" show partial commands in the last line of the screen
+set showcmd
+
+" use case insensitive search except when using capital letters
+set ignorecase
+set smartcase
+
+" without filetype keep indent
+set autoindent
+
+
+" use visual bell instead of sound
+set visualbell
+
+" instead of failing, ask to safe
+set confirm
+
+" display line number
+set number
+
+" change number color
+highlight LineNr ctermfg=LightMagenta

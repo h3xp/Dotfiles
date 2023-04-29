@@ -1,6 +1,11 @@
 VOLUME=$1
 notify=$2
-echo $notify
+VOL=$(pamixer --get-volume)
+DIFF=$((VOL + VOLUME))
+if [[ 0 -gt "$DIFF" ]]
+then
+	DIFF=0
+fi
 if [[ "$VOLUME" = "toggle" ]]
 then
 	cmd="pactl set-sink-mute"
@@ -28,7 +33,8 @@ then
 else
 	cmd="pactl set-sink-volume"
 	VOLUME=$VOLUME"%"
-	notification="volume: $VOLUME"
+	BAR="-h int:value:$DIFF"
+	notification="volume"
 	sinksource="list-sinks"
 fi
 for SINK in $(pacmd $sinksource | grep 'index:' | cut -b12-)
@@ -36,6 +42,6 @@ do
 	$cmd $SINK $VOLUME
 	if [[ $notify ]]
 	then
-		notify-send $notification
+		notify-send $notification $BAR
 	fi
 done

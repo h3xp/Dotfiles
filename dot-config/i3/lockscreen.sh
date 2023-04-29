@@ -14,7 +14,7 @@ TEXT="/usr/share/i3lock-fancy-multimonitor/icons/text.png"
 
 PARAMS=""
 OUTPUT_IMAGE="/tmp/i3lock.png"
-INPUT_IMAGE="/home/tom/Pictures/wallpaper/wallhaven-o5gjml.png"
+INPUT_IMAGE="/home/tom/Pictures/wallpaper/wallhaven-ex3ovk.png"
 DISPLAY_TEXT=true
 COLORIZE=false
 BLURTYPE="1x1"
@@ -91,7 +91,7 @@ do
     POS_X=$(($X+${WIDTH}/2-${IMAGE_WIDTH}/2))
     POS_Y=$(($Y+$HEIGHT/2-$IMAGE_HEIGHT/2))
 
-    PARAMS="$PARAMS '$LOCK' '-geometry' '+$POS_X+$POS_Y' '-composite'"
+#    PARAMS="$PARAMS '$LOCK' '-geometry' '+$POS_X+$POS_Y' '-composite'"
 
     if $DISPLAY_TEXT ; then
         TEXT_X=$(($X+$WIDTH/2-$TEXT_WIDTH/2))
@@ -109,7 +109,8 @@ then
 fi
 
 #Execute ImageMagick:
-eval convert "'$OUTPUT_IMAGE' $RESIZE '-level' '0%,100%,0.6' '-blur' '$BLURTYPE' $PARAMS '$OUTPUT_IMAGE'"
+#eval convert "'$OUTPUT_IMAGE' $RESIZE '-level' '0%,100%,0.6' '-blur' '$BLURTYPE' $PARAMS '$OUTPUT_IMAGE'"
+eval convert "'$OUTPUT_IMAGE' $RESIZE '-level' '0%,100%,0.6' $PARAMS '$OUTPUT_IMAGE'"
 
 #Lock the screen:
 i3lock -i $OUTPUT_IMAGE -t

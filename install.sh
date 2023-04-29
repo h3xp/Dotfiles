@@ -18,7 +18,7 @@ config_files=(
     "$HOME/.config/polybar/launch.sh"
     "$HOME/.config/polybar/mic_status.sh"
     "$HOME/.config/polybar/vpn_status.sh"
-    #"$HOME/.config/rofi/config.rasi"
+    "$HOME/.config/rofi/config.rasi"
     "$HOME/.config/rofi/custom_scripts.sh"
     "$HOME/.screenlayout/hdmi-duplicate.sh"
     "$HOME/.screenlayout/hdmi-extended.sh"

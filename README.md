@@ -17,7 +17,7 @@ personal backup for my config files
 - [xss-lock](https://wiki.archlinux.org/title/Session_lock)
 
 
-# Install
+# Install (deprecated)
 ```bash
 git clone https://github.com/h3xp/dotFiles.git
 cd dotFiles
